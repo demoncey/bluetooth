@@ -6,6 +6,7 @@ class Bluetooth
 {
   public:
     Bluetooth(int rx,int tx,int read_led,int write_led,int delay_time);
+	Bluetooth(int rx,int tx,int delay_time);
     void init();
     void send(String msg);
 	String recv();
