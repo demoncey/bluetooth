@@ -5,16 +5,16 @@
 class Bluetooth
 {
   public:
-    Bluetooth(int rx,int tx,int read_led,int write_led,int delay_time);
-	Bluetooth(int rx,int tx,int delay_time);
+    Bluetooth(uint8_t rx,uint8_t tx,uint8_t read_led,uint8_t write_led,uint8_t delay_time);
+	Bluetooth(uint8_t rx,uint8_t tx,uint8_t delay_time);
     void init();
     void send(String msg);
 	String recv();
   private:
 	SoftwareSerial bluetooth;
-	int interval;
-	int read_led;
-	int write_led;
+	uint8_t interval;
+	uint8_t read_led;
+	uint8_t write_led;
 };
 
 #endif

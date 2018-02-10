@@ -1,12 +1,16 @@
 #include "Arduino.h"
 #include "bluetooth.h"
 #include <SoftwareSerial.h> 
-Bluetooth::Bluetooth(int rx,int tx,int read_led,int write_led,int delay_time):bluetooth(SoftwareSerial(rx,tx))
+Bluetooth::Bluetooth(uint8_t rx,uint8_t tx,uint8_t read_led,uint8_t write_led,uint8_t delay_time):bluetooth(SoftwareSerial(rx,tx)),interval(delay_time)
 {
   
-  this->interval=delay_time;
   this->write_led=read_led;
   this->read_led=write_led;
+  
+}
+
+Bluetooth::Bluetooth(uint8_t rx,uint8_t tx,uint8_t delay_time):bluetooth(SoftwareSerial(rx,tx)),write_led(0),read_led(0),interval(delay_time)
+{
   
 }
 
